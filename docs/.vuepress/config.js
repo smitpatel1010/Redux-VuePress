@@ -1,7 +1,7 @@
 module.exports = {
     title: 'Redux',
     description: 'A predictable state container for JavaScript apps.',
-    base: 'Redux-VuePress',
+    base: '/Redux-VuePress/',
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
