@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Refactoring Reducers Example | Redux</title>
+    <meta name="description" content="A predictable state container for JavaScript apps.">
+    
+    
+    <link rel="preload" href="/Redux-VuePress/assets/css/0.styles.9806c749.css" as="style"><link rel="preload" href="/Redux-VuePress/assets/js/app.8c65f330.js" as="script"><link rel="preload" href="/Redux-VuePress/assets/js/69.a3058151.js" as="script"><link rel="prefetch" href="/Redux-VuePress/assets/js/10.f297c3a7.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/11.a2c652c1.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/12.513e693e.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/13.88196950.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/14.3806e2ce.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/15.b8c9a5e1.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/16.6121b3bc.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/17.79743fca.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/18.7d6ecf90.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/19.686eccfd.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/2.ae38e971.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/20.1350d427.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/21.9af1161b.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/22.57dc1914.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/23.adb31bd9.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/24.eee4623e.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/25.2f591465.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/26.81b27b86.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/27.9e1ac337.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/28.94e1ef2a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/29.4b8c6426.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/3.858b79f4.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/30.6dad1db7.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/31.89f70931.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/32.2091a300.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/33.2303c235.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/34.087cdd0a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/35.4bda516a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/36.63e0a6f4.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/37.19a47d0d.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/38.ddf95f59.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/39.1afba7ab.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/4.75a7df39.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/40.99e15558.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/41.91b96544.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/42.c366e927.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/43.bdf434f6.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/44.635a49bb.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/45.71e389a1.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/46.633b3d17.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/47.500a07d9.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/48.12801231.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/49.b3d3d11f.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/5.7b89c04a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/50.635757a5.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/51.cba0e4a6.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/52.3368200f.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/53.712b9e99.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/54.34642ea0.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/55.f1db5e56.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/56.c1bd4016.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/57.70c135cd.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/58.2a1ef24f.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/59.bd926244.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/6.f4919b51.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/60.298af4f8.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/61.0d1d1e77.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/62.8206427d.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/63.47018656.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/64.dc3afa73.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/65.d8b80998.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/66.54ad3434.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/67.f9892972.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/68.0d7bb2de.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/7.8eecbfa5.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/70.473fbcf3.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/71.1298e488.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/72.eab85d6a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/73.02eeea2c.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/74.92541545.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/75.2ac1766d.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/8.8aeac081.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/9.e43a4b55.js">
+    <link rel="stylesheet" href="/Redux-VuePress/assets/css/0.styles.9806c749.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Redux-VuePress/" class="home-link router-link-active"><!----> <span class="site-name">Redux</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Redux-VuePress/" class="nav-link">Home</a></div><div class="nav-item"><a href="/Redux-VuePress/introduction/GettingStarted.html" class="nav-link">Getting Started</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Redux-VuePress/" class="nav-link">Home</a></div><div class="nav-item"><a href="/Redux-VuePress/introduction/GettingStarted.html" class="nav-link">Getting Started</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Introduction</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/Redux-VuePress/introduction/GettingStarted.html" class="sidebar-link">Getting Started with Redux</a></li><li><a href="/Redux-VuePress/introduction/Installation.html" class="sidebar-link">Installation</a></li><li><a href="/Redux-VuePress/introduction/Motivation.html" class="sidebar-link">Motivation</a></li><li><a href="/Redux-VuePress/introduction/CoreConcepts.html" class="sidebar-link">Core Concepts</a></li><li><a href="/Redux-VuePress/introduction/ThreePrinciples.html" class="sidebar-link">Three Principles</a></li><li><a href="/Redux-VuePress/introduction/PriorArt.html" class="sidebar-link">Prior Art</a></li><li><a href="/Redux-VuePress/introduction/LearningResources.html" class="sidebar-link">Learning Resources</a></li><li><a href="/Redux-VuePress/introduction/Ecosystem.html" class="sidebar-link">Ecosystem</a></li><li><a href="/Redux-VuePress/introduction/Examples.html" class="sidebar-link">Examples</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Basic Tutorial</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Advanced Tutorial</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Recipes</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>FAQ</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Other</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="refactoring-reducer-logic-using-functional-decomposition-and-reducer-composition"><a href="#refactoring-reducer-logic-using-functional-decomposition-and-reducer-composition" aria-hidden="true" class="header-anchor">#</a> Refactoring Reducer Logic Using Functional Decomposition and Reducer Composition</h1> <p>It may be helpful to see examples of what the different types of sub-reducer functions look like and how they fit together. Let's look at a demonstration of how a large single reducer function can be refactored into a composition of several smaller functions.</p> <blockquote><p><strong>Note</strong>: this example is deliberately written in a verbose style in order to illustrate the concepts and the process of refactoring, rather than perfectly concise code.</p></blockquote> <h4 id="initial-reducer"><a href="#initial-reducer" aria-hidden="true" class="header-anchor">#</a> Initial Reducer</h4> <p>Let's say that our initial reducer looks like this:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> initialState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  visibilityFilter<span class="token punctuation">:</span> <span class="token string">'SHOW_ALL'</span><span class="token punctuation">,</span>
+  todos<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">appReducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'SET_VISIBILITY_FILTER'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        visibilityFilter<span class="token punctuation">:</span> action<span class="token punctuation">.</span>filter
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token string">'ADD_TODO'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          id<span class="token punctuation">:</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+          text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+          completed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token string">'TOGGLE_TODO'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id <span class="token operator">!==</span> action<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> todo
+          <span class="token punctuation">}</span>
+
+          <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> todo<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            completed<span class="token punctuation">:</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>completed
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token string">'EDIT_TODO'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> state<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        todos<span class="token punctuation">:</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id <span class="token operator">!==</span> action<span class="token punctuation">.</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> todo
+          <span class="token punctuation">}</span>
+
+          <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> todo<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>That function is fairly short, but already becoming overly complex. We're dealing with two different areas of concern (filtering vs managing our list of todos), the nesting is making the update logic harder to read, and it's not exactly clear what's going on everywhere.</p> <h4 id="extracting-utility-functions"><a href="#extracting-utility-functions" aria-hidden="true" class="header-anchor">#</a> Extracting Utility Functions</h4> <p>A good first step might be to break out a utility function to return a new object with updated fields. There's also a repeated pattern with trying to update a specific item in an array that we could extract to a function:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">updateObject</span><span class="token punctuation">(</span><span class="token parameter">oldObject<span class="token punctuation">,</span> newValues</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Encapsulate the idea of passing a new object as the first parameter</span>
+  <span class="token comment">// to Object.assign to ensure we correctly copy data instead of mutating</span>
+  <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> oldObject<span class="token punctuation">,</span> newValues<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> itemId<span class="token punctuation">,</span> updateItemCallback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> updatedItems <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>id <span class="token operator">!==</span> itemId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Since we only want to update one item, preserve all others as they are now</span>
+      <span class="token keyword">return</span> item
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Use the provided callback to create an updated item</span>
+    <span class="token keyword">const</span> updatedItem <span class="token operator">=</span> <span class="token function">updateItemCallback</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> updatedItem
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> updatedItems
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">appReducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'SET_VISIBILITY_FILTER'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> visibilityFilter<span class="token punctuation">:</span> action<span class="token punctuation">.</span>filter <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token string">'ADD_TODO'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> newTodos <span class="token operator">=</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        id<span class="token punctuation">:</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+        text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+        completed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> todos<span class="token punctuation">:</span> newTodos <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token string">'TOGGLE_TODO'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> newTodos <span class="token operator">=</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> <span class="token punctuation">{</span> completed<span class="token punctuation">:</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>completed <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> todos<span class="token punctuation">:</span> newTodos <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token string">'EDIT_TODO'</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> newTodos <span class="token operator">=</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> <span class="token punctuation">{</span> text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> todos<span class="token punctuation">:</span> newTodos <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>That reduced the duplication and made things a bit easier to read.</p> <h4 id="extracting-case-reducers"><a href="#extracting-case-reducers" aria-hidden="true" class="header-anchor">#</a> Extracting Case Reducers</h4> <p>Next, we can split each specific case into its own function:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Omitted</span>
+<span class="token keyword">function</span> <span class="token function">updateObject</span><span class="token punctuation">(</span><span class="token parameter">oldObject<span class="token punctuation">,</span> newValues</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> itemId<span class="token punctuation">,</span> updateItemCallback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">setVisibilityFilter</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> visibilityFilter<span class="token punctuation">:</span> action<span class="token punctuation">.</span>filter <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">addTodo</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> state<span class="token punctuation">.</span>todos<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+    text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+    completed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> todos<span class="token punctuation">:</span> newTodos <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> <span class="token punctuation">{</span> completed<span class="token punctuation">:</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>completed <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> todos<span class="token punctuation">:</span> newTodos <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">editTodo</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> <span class="token punctuation">{</span> text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token punctuation">{</span> todos<span class="token punctuation">:</span> newTodos <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">appReducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'SET_VISIBILITY_FILTER'</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token function">setVisibilityFilter</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">'ADD_TODO'</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token function">addTodo</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">'TOGGLE_TODO'</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">'EDIT_TODO'</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token function">editTodo</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Now it's <em>very</em> clear what's happening in each case. We can also start to see some patterns emerging.</p> <h4 id="separating-data-handling-by-domain"><a href="#separating-data-handling-by-domain" aria-hidden="true" class="header-anchor">#</a> Separating Data Handling by Domain</h4> <p>Our app reducer is still aware of all the different cases for our application. Let's try splitting things up so that the filter logic and the todo logic are separated:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Omitted</span>
+<span class="token keyword">function</span> <span class="token function">updateObject</span><span class="token punctuation">(</span><span class="token parameter">oldObject<span class="token punctuation">,</span> newValues</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> itemId<span class="token punctuation">,</span> updateItemCallback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">setVisibilityFilter</span><span class="token punctuation">(</span><span class="token parameter">visibilityState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Technically, we don't even care about the previous state</span>
+  <span class="token keyword">return</span> action<span class="token punctuation">.</span>filter
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">visibilityReducer</span><span class="token punctuation">(</span>visibilityState <span class="token operator">=</span> <span class="token string">'SHOW_ALL'</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'SET_VISIBILITY_FILTER'</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token function">setVisibilityFilter</span><span class="token punctuation">(</span>visibilityState<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> visibilityState
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">addTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> todosState<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+    text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+    completed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> newTodos
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span>todosState<span class="token punctuation">,</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> <span class="token punctuation">{</span> completed<span class="token punctuation">:</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>completed <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> newTodos
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">editTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span>todosState<span class="token punctuation">,</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> <span class="token punctuation">{</span> text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> newTodos
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">todosReducer</span><span class="token punctuation">(</span><span class="token parameter">todosState <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string">'ADD_TODO'</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token function">addTodo</span><span class="token punctuation">(</span>todosState<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">'TOGGLE_TODO'</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span>todosState<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token string">'EDIT_TODO'</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token function">editTodo</span><span class="token punctuation">(</span>todosState<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> todosState
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">appReducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    todos<span class="token punctuation">:</span> <span class="token function">todosReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    visibilityFilter<span class="token punctuation">:</span> <span class="token function">visibilityReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>visibilityFilter<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Notice that because the two &quot;slice of state&quot; reducers are now getting only their own part of the whole state as arguments, they no longer need to return complex nested state objects, and are now simpler as a result.</p> <h4 id="reducing-boilerplate"><a href="#reducing-boilerplate" aria-hidden="true" class="header-anchor">#</a> Reducing Boilerplate</h4> <p>We're almost done. Since many people don't like switch statements, it's very common to use a function that creates a lookup table of action types to case functions. We'll use the <code>createReducer</code> function described in <a href="/Redux-VuePress/recipes/ReducingBoilerplate.html#generating-reducers">Reducing Boilerplate</a>:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Omitted</span>
+<span class="token keyword">function</span> <span class="token function">updateObject</span><span class="token punctuation">(</span><span class="token parameter">oldObject<span class="token punctuation">,</span> newValues</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> itemId<span class="token punctuation">,</span> updateItemCallback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createReducer</span><span class="token punctuation">(</span><span class="token parameter">initialState<span class="token punctuation">,</span> handlers</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">reducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>handlers<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> handlers<span class="token punctuation">[</span>action<span class="token punctuation">.</span>type<span class="token punctuation">]</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> state
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Omitted</span>
+<span class="token keyword">function</span> <span class="token function">setVisibilityFilter</span><span class="token punctuation">(</span><span class="token parameter">visibilityState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> visibilityReducer <span class="token operator">=</span> <span class="token function">createReducer</span><span class="token punctuation">(</span><span class="token string">'SHOW_ALL'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token constant">SET_VISIBILITY_FILTER</span><span class="token punctuation">:</span> setVisibilityFilter
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Omitted</span>
+<span class="token keyword">function</span> <span class="token function">addTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">editTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> todosReducer <span class="token operator">=</span> <span class="token function">createReducer</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token constant">ADD_TODO</span><span class="token punctuation">:</span> addTodo<span class="token punctuation">,</span>
+  <span class="token constant">TOGGLE_TODO</span><span class="token punctuation">:</span> toggleTodo<span class="token punctuation">,</span>
+  <span class="token constant">EDIT_TODO</span><span class="token punctuation">:</span> editTodo
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">appReducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    todos<span class="token punctuation">:</span> <span class="token function">todosReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>todos<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    visibilityFilter<span class="token punctuation">:</span> <span class="token function">visibilityReducer</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>visibilityFilter<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="combining-reducers-by-slice"><a href="#combining-reducers-by-slice" aria-hidden="true" class="header-anchor">#</a> Combining Reducers by Slice</h4> <p>As our last step, we can now use Redux's built-in <code>combineReducers</code> utility to handle the &quot;slice-of-state&quot; logic for our top-level app reducer. Here's the final result:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Reusable utility functions</span>
+
+<span class="token keyword">function</span> <span class="token function">updateObject</span><span class="token punctuation">(</span><span class="token parameter">oldObject<span class="token punctuation">,</span> newValues</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Encapsulate the idea of passing a new object as the first parameter</span>
+  <span class="token comment">// to Object.assign to ensure we correctly copy data instead of mutating</span>
+  <span class="token keyword">return</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> oldObject<span class="token punctuation">,</span> newValues<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span><span class="token parameter">array<span class="token punctuation">,</span> itemId<span class="token punctuation">,</span> updateItemCallback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> updatedItems <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>id <span class="token operator">!==</span> itemId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Since we only want to update one item, preserve all others as they are now</span>
+      <span class="token keyword">return</span> item
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Use the provided callback to create an updated item</span>
+    <span class="token keyword">const</span> updatedItem <span class="token operator">=</span> <span class="token function">updateItemCallback</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> updatedItem
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> updatedItems
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">createReducer</span><span class="token punctuation">(</span><span class="token parameter">initialState<span class="token punctuation">,</span> handlers</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">reducer</span><span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>handlers<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> handlers<span class="token punctuation">[</span>action<span class="token punctuation">.</span>type<span class="token punctuation">]</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> action<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> state
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Handler for a specific case (&quot;case reducer&quot;)</span>
+<span class="token keyword">function</span> <span class="token function">setVisibilityFilter</span><span class="token punctuation">(</span><span class="token parameter">visibilityState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Technically, we don't even care about the previous state</span>
+  <span class="token keyword">return</span> action<span class="token punctuation">.</span>filter
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Handler for an entire slice of state (&quot;slice reducer&quot;)</span>
+<span class="token keyword">const</span> visibilityReducer <span class="token operator">=</span> <span class="token function">createReducer</span><span class="token punctuation">(</span><span class="token string">'SHOW_ALL'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token constant">SET_VISIBILITY_FILTER</span><span class="token punctuation">:</span> setVisibilityFilter
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Case reducer</span>
+<span class="token keyword">function</span> <span class="token function">addTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> todosState<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    id<span class="token punctuation">:</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
+    text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
+    completed<span class="token punctuation">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> newTodos
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Case reducer</span>
+<span class="token keyword">function</span> <span class="token function">toggleTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span>todosState<span class="token punctuation">,</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> <span class="token punctuation">{</span> completed<span class="token punctuation">:</span> <span class="token operator">!</span>todo<span class="token punctuation">.</span>completed <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> newTodos
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Case reducer</span>
+<span class="token keyword">function</span> <span class="token function">editTodo</span><span class="token punctuation">(</span><span class="token parameter">todosState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> newTodos <span class="token operator">=</span> <span class="token function">updateItemInArray</span><span class="token punctuation">(</span>todosState<span class="token punctuation">,</span> action<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token parameter">todo</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">updateObject</span><span class="token punctuation">(</span>todo<span class="token punctuation">,</span> <span class="token punctuation">{</span> text<span class="token punctuation">:</span> action<span class="token punctuation">.</span>text <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> newTodos
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Slice reducer</span>
+<span class="token keyword">const</span> todosReducer <span class="token operator">=</span> <span class="token function">createReducer</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token constant">ADD_TODO</span><span class="token punctuation">:</span> addTodo<span class="token punctuation">,</span>
+  <span class="token constant">TOGGLE_TODO</span><span class="token punctuation">:</span> toggleTodo<span class="token punctuation">,</span>
+  <span class="token constant">EDIT_TODO</span><span class="token punctuation">:</span> editTodo
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// &quot;Root reducer&quot;</span>
+<span class="token keyword">const</span> appReducer <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  visibilityFilter<span class="token punctuation">:</span> visibilityReducer<span class="token punctuation">,</span>
+  todos<span class="token punctuation">:</span> todosReducer
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>We now have examples of several kinds of split-up reducer functions: helper utilities like <code>updateObject</code> and <code>createReducer</code>, handlers for specific cases like <code>setVisibilityFilter</code> and <code>addTodo</code>, and slice-of-state handlers like <code>visibilityReducer</code> and <code>todosReducer</code>. We also can see that <code>appReducer</code> is an example of a &quot;root reducer&quot;.</p> <p>Although the final result in this example is noticeably longer than the original version, this is primarily due to the extraction of the utility functions, the addition of comments, and some deliberate verbosity for the sake of clarity, such as separate return statements. Looking at each function individually, the amount of responsibility is now smaller, and the intent is hopefully clearer. Also, in a real application, these functions would probably then be split into separate files such as <code>reducerUtilities.js</code>, <code>visibilityReducer.js</code>, <code>todosReducer.js</code>, and <code>rootReducer.js</code>.</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/Redux-VuePress/assets/js/app.8c65f330.js" defer></script><script src="/Redux-VuePress/assets/js/69.a3058151.js" defer></script>
+  </body>
+</html>
