@@ -8,6 +8,7 @@ module.exports = {
             { text: 'Getting Started', link: '/introduction/GettingStarted' },
             { text: 'External', link: 'https://google.com' },
           ],
+        editLinks: true,
         sidebar:[
             {
                 title: 'Introduction',
