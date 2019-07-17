@@ -2,6 +2,7 @@ module.exports = {
     title: 'Redux',
     description: 'A predictable state container for JavaScript apps.',
     base: '/Redux-VuePress/',
+    theme:'yuu',
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
