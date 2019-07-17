@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Usage With TypeScript | Redux</title>
+    <meta name="description" content="A predictable state container for JavaScript apps.">
+    
+    
+    <link rel="preload" href="/Redux-VuePress/assets/css/0.styles.9806c749.css" as="style"><link rel="preload" href="/Redux-VuePress/assets/js/app.8c65f330.js" as="script"><link rel="preload" href="/Redux-VuePress/assets/js/58.2a1ef24f.js" as="script"><link rel="prefetch" href="/Redux-VuePress/assets/js/10.f297c3a7.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/11.a2c652c1.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/12.513e693e.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/13.88196950.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/14.3806e2ce.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/15.b8c9a5e1.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/16.6121b3bc.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/17.79743fca.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/18.7d6ecf90.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/19.686eccfd.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/2.ae38e971.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/20.1350d427.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/21.9af1161b.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/22.57dc1914.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/23.adb31bd9.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/24.eee4623e.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/25.2f591465.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/26.81b27b86.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/27.9e1ac337.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/28.94e1ef2a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/29.4b8c6426.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/3.858b79f4.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/30.6dad1db7.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/31.89f70931.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/32.2091a300.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/33.2303c235.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/34.087cdd0a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/35.4bda516a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/36.63e0a6f4.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/37.19a47d0d.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/38.ddf95f59.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/39.1afba7ab.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/4.75a7df39.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/40.99e15558.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/41.91b96544.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/42.c366e927.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/43.bdf434f6.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/44.635a49bb.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/45.71e389a1.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/46.633b3d17.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/47.500a07d9.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/48.12801231.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/49.b3d3d11f.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/5.7b89c04a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/50.635757a5.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/51.cba0e4a6.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/52.3368200f.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/53.712b9e99.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/54.34642ea0.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/55.f1db5e56.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/56.c1bd4016.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/57.70c135cd.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/59.bd926244.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/6.f4919b51.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/60.298af4f8.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/61.0d1d1e77.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/62.8206427d.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/63.47018656.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/64.dc3afa73.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/65.d8b80998.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/66.54ad3434.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/67.f9892972.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/68.0d7bb2de.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/69.a3058151.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/7.8eecbfa5.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/70.473fbcf3.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/71.1298e488.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/72.eab85d6a.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/73.02eeea2c.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/74.92541545.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/75.2ac1766d.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/8.8aeac081.js"><link rel="prefetch" href="/Redux-VuePress/assets/js/9.e43a4b55.js">
+    <link rel="stylesheet" href="/Redux-VuePress/assets/css/0.styles.9806c749.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Redux-VuePress/" class="home-link router-link-active"><!----> <span class="site-name">Redux</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Redux-VuePress/" class="nav-link">Home</a></div><div class="nav-item"><a href="/Redux-VuePress/introduction/GettingStarted.html" class="nav-link">Getting Started</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Redux-VuePress/" class="nav-link">Home</a></div><div class="nav-item"><a href="/Redux-VuePress/introduction/GettingStarted.html" class="nav-link">Getting Started</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  External
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Introduction</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/Redux-VuePress/introduction/GettingStarted.html" class="sidebar-link">Getting Started with Redux</a></li><li><a href="/Redux-VuePress/introduction/Installation.html" class="sidebar-link">Installation</a></li><li><a href="/Redux-VuePress/introduction/Motivation.html" class="sidebar-link">Motivation</a></li><li><a href="/Redux-VuePress/introduction/CoreConcepts.html" class="sidebar-link">Core Concepts</a></li><li><a href="/Redux-VuePress/introduction/ThreePrinciples.html" class="sidebar-link">Three Principles</a></li><li><a href="/Redux-VuePress/introduction/PriorArt.html" class="sidebar-link">Prior Art</a></li><li><a href="/Redux-VuePress/introduction/LearningResources.html" class="sidebar-link">Learning Resources</a></li><li><a href="/Redux-VuePress/introduction/Ecosystem.html" class="sidebar-link">Ecosystem</a></li><li><a href="/Redux-VuePress/introduction/Examples.html" class="sidebar-link">Examples</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Basic Tutorial</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Advanced Tutorial</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Recipes</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>FAQ</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Other</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="usage-with-typescript"><a href="#usage-with-typescript" aria-hidden="true" class="header-anchor">#</a> Usage with TypeScript</h1> <p><strong>TypeScript</strong> is a typed superset of JavaScript. It has become popular recently in applications due to the benefits it can bring. If you are new to TypeScript it is highly recommended to become familiar with it first before proceeding. You can check out its documentation <a href="https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html" target="_blank" rel="noopener noreferrer">here.<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>TypeScript has the potential to bring the following benefits to a Redux application:</p> <ol><li>Type safety for reducers, state and action creators</li> <li>Easy refactoring of typed code</li> <li>A superior developer experience in a team environment</li></ol> <h2 id="a-practical-example"><a href="#a-practical-example" aria-hidden="true" class="header-anchor">#</a> A Practical Example</h2> <p>We will be going through a simplistic chat application to demonstrate a possible approach to include static typing. This chat application will have two reducers. The <em>chat reducer</em> will focus on storing the chat history and the <em>system reducer</em> will focus on storing session information.</p> <p>The full source code is available on <a href="https://codesandbox.io/s/w02m7jm3q7" target="_blank" rel="noopener noreferrer">codesandbox here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. Note that by going through this example yourself you will experience some of the benefits of using TypeScript.</p> <h2 id="type-checking-state"><a href="#type-checking-state" aria-hidden="true" class="header-anchor">#</a> Type Checking State</h2> <p>Adding types to each slice of state is a good place to start since it does not rely on other types. In this example we start by describing the chat reducer's slice of state:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/chat/types.ts</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">Message</span> <span class="token punctuation">{</span>
+  user<span class="token punctuation">:</span> <span class="token builtin">string</span>
+  message<span class="token punctuation">:</span> <span class="token builtin">string</span>
+  timestamp<span class="token punctuation">:</span> <span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">ChatState</span> <span class="token punctuation">{</span>
+  messages<span class="token punctuation">:</span> Message<span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>And then do the same for the system reducer's slice of state:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/system/types.ts</span>
+
+<span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">SystemState</span> <span class="token punctuation">{</span>
+  loggedIn<span class="token punctuation">:</span> <span class="token builtin">boolean</span>
+  session<span class="token punctuation">:</span> <span class="token builtin">string</span>
+  userName<span class="token punctuation">:</span> <span class="token builtin">string</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Note that we are exporting these interfaces to reuse them later in reducers and action creators.</p> <h2 id="type-checking-actions-action-creators"><a href="#type-checking-actions-action-creators" aria-hidden="true" class="header-anchor">#</a> Type Checking Actions &amp; Action Creators</h2> <p>We will be using string literals and using <code>typeof</code> to declare our action constants and infer types. Note that we are making a tradeoff here when we declare our types in a separate file. In exchange for separating our types into a separate file, we get to keep our other files more focused on their purpose. While this tradeoff can improve the maintainability of the codebase, it is perfectly fine to organize your project however you see fit.</p> <p>Chat Action Constants &amp; Shape:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/chat/types.ts</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">SEND_MESSAGE</span> <span class="token operator">=</span> <span class="token string">'SEND_MESSAGE'</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">DELETE_MESSAGE</span> <span class="token operator">=</span> <span class="token string">'DELETE_MESSAGE'</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">SendMessageAction</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token keyword">typeof</span> <span class="token constant">SEND_MESSAGE</span>
+  payload<span class="token punctuation">:</span> Message
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">DeleteMessageAction</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token keyword">typeof</span> <span class="token constant">DELETE_MESSAGE</span>
+  meta<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    timestamp<span class="token punctuation">:</span> <span class="token builtin">number</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> ChatActionTypes <span class="token operator">=</span> SendMessageAction <span class="token operator">|</span> DeleteMessageAction
+</code></pre></div><p>Note that we are using TypeScript's Union Type here to express all possible actions.</p> <p>With these types declared we can now also type check chat's action creators. In this case we are taking advantage of TypeScript's inference:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/chat/actions.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Message<span class="token punctuation">,</span> <span class="token constant">SEND_MESSAGE</span><span class="token punctuation">,</span> <span class="token constant">DELETE_MESSAGE</span><span class="token punctuation">,</span> ChatActionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./types'</span>
+
+<span class="token comment">// TypeScript infers that this function is returning SendMessageAction</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">sendMessage</span><span class="token punctuation">(</span><span class="token parameter">newMessage<span class="token punctuation">:</span> Message</span><span class="token punctuation">)</span><span class="token punctuation">:</span> ChatActionTypes <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token constant">SEND_MESSAGE</span><span class="token punctuation">,</span>
+    payload<span class="token punctuation">:</span> newMessage
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// TypeScript infers that this function is returning DeleteMessageAction</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">deleteMessage</span><span class="token punctuation">(</span><span class="token parameter">timestamp<span class="token punctuation">:</span> <span class="token builtin">number</span></span><span class="token punctuation">)</span><span class="token punctuation">:</span> ChatActionTypes <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token constant">DELETE_MESSAGE</span><span class="token punctuation">,</span>
+    meta<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      timestamp
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>System Action Constants &amp; Shape:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/system/types.ts</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">UPDATE_SESSION</span> <span class="token operator">=</span> <span class="token string">'UPDATE_SESSION'</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">UpdateSessionAction</span> <span class="token punctuation">{</span>
+  <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token keyword">typeof</span> <span class="token constant">UPDATE_SESSION</span>
+  payload<span class="token punctuation">:</span> SystemState
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> SystemActionTypes <span class="token operator">=</span> UpdateSessionAction
+</code></pre></div><p>With these types we can now also type check system's action creators:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/system/actions.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> SystemState<span class="token punctuation">,</span> <span class="token constant">UPDATE_SESSION</span><span class="token punctuation">,</span> SystemActionTypes <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./types'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">updateSession</span><span class="token punctuation">(</span><span class="token parameter">newSession<span class="token punctuation">:</span> SystemState</span><span class="token punctuation">)</span><span class="token punctuation">:</span> SystemActionTypes <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token keyword">type</span><span class="token punctuation">:</span> <span class="token constant">UPDATE_SESSION</span><span class="token punctuation">,</span>
+    payload<span class="token punctuation">:</span> newSession
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="type-checking-reducers"><a href="#type-checking-reducers" aria-hidden="true" class="header-anchor">#</a> Type Checking Reducers</h2> <p>Reducers are just pure functions that take the previous state, an action and then return the next state. In this example, we explicitly declare the type of actions this reducer will receive along with what it should return (the appropriate slice of state). With these additions TypeScript will give rich intellisense on the properties of our actions and state. In addition, we will also get errors when a certain case does not return the <code>ChatState</code>.</p> <p>Type checked chat reducer:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/chat/reducers.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  ChatState<span class="token punctuation">,</span>
+  ChatActions<span class="token punctuation">,</span>
+  ChatActionTypes<span class="token punctuation">,</span>
+  <span class="token constant">SEND_MESSAGE</span><span class="token punctuation">,</span>
+  <span class="token constant">DELETE_MESSAGE</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./types'</span>
+
+<span class="token keyword">const</span> initialState<span class="token punctuation">:</span> ChatState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  messages<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">chatReducer</span><span class="token punctuation">(</span>
+  <span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span>
+  action<span class="token punctuation">:</span> ChatActionTypes</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span> ChatState <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token keyword">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token constant">SEND_MESSAGE</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        messages<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">...</span>state<span class="token punctuation">.</span>messages<span class="token punctuation">,</span> action<span class="token punctuation">.</span>payload<span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token keyword">case</span> <span class="token constant">DELETE_MESSAGE</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        messages<span class="token punctuation">:</span> state<span class="token punctuation">.</span>messages<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>
+          <span class="token parameter">message</span> <span class="token operator">=&gt;</span> message<span class="token punctuation">.</span>timestamp <span class="token operator">!==</span> action<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>timestamp
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Type checked system reducer:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/system/reducers.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span>
+  SystemActions<span class="token punctuation">,</span>
+  SystemState<span class="token punctuation">,</span>
+  SystemActionTypes<span class="token punctuation">,</span>
+  <span class="token constant">UPDATE_SESSION</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./types'</span>
+
+<span class="token keyword">const</span> initialState<span class="token punctuation">:</span> SystemState <span class="token operator">=</span> <span class="token punctuation">{</span>
+  loggedIn<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  session<span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  userName<span class="token punctuation">:</span> <span class="token string">''</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">systemReducer</span><span class="token punctuation">(</span>
+  <span class="token parameter">state <span class="token operator">=</span> initialState<span class="token punctuation">,</span>
+  action<span class="token punctuation">:</span> SystemActionTypes</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span> SystemState <span class="token punctuation">{</span>
+  <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token keyword">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token constant">UPDATE_SESSION</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token operator">...</span>state<span class="token punctuation">,</span>
+        <span class="token operator">...</span>action<span class="token punctuation">.</span>payload
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+      <span class="token keyword">return</span> state
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>We now need to generate the root reducer function, which is normally done using <code>combineReducers</code>. Note that we do not have to explicitly declare a new interface for AppState. We can use <code>ReturnType</code> to infer state shape from the <code>rootReducer</code>.</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/store/index.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> systemReducer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./system/reducers'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> chatReducer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./chat/reducers'</span>
+
+<span class="token keyword">const</span> rootReducer <span class="token operator">=</span> <span class="token function">combineReducers</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  system<span class="token punctuation">:</span> systemReducer<span class="token punctuation">,</span>
+  chat<span class="token punctuation">:</span> chatReducer
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> AppState <span class="token operator">=</span> ReturnType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> rootReducer<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="usage-with-react-redux"><a href="#usage-with-react-redux" aria-hidden="true" class="header-anchor">#</a> Usage with React Redux</h2> <p>While React Redux is a separate library from redux itself, it is commonly used with react. For this reason, we will go through how React Redux works with TypeScript using the same example used previously in this section.</p> <p>Note: React Redux does not have type checking by itself, you will have to install <code>@types/react-redux</code> by running <code>npm i @types/react-redux -D</code>.</p> <p>We will now add type checking to the parameter that <code>mapStateToProps</code> receives. Luckily, we have already declared what the store should look like from defining a type that infers from the <code>rootReducer</code>:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/App.tsx</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AppState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store'</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">mapStateToProps</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">:</span> AppState</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  system<span class="token punctuation">:</span> state<span class="token punctuation">.</span>system<span class="token punctuation">,</span>
+  chat<span class="token punctuation">:</span> state<span class="token punctuation">.</span>chat
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>In this example we declared two different properties in <code>mapStateToProps</code>. To type check these properties, we will create an interface with the appropriate slices of state:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/App.tsx</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> SystemState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store/system/types'</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ChatState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store/chat/types'</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">AppProps</span> <span class="token punctuation">{</span>
+  chat<span class="token punctuation">:</span> ChatState
+  system<span class="token punctuation">:</span> SystemState
+<span class="token punctuation">}</span>
+</code></pre></div><p>We can now use this interface to specify what props the appropriate component will receive like so:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/App.tsx</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span><span class="token operator">&lt;</span>AppProps<span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+</code></pre></div><p>In this component we are also mapping action creators to be available in the component's props. In the same <code>AppProps</code> interface we will use the powerful <code>typeof</code> feature to let TypeScript know what our action creators expect like so:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/App.tsx</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> SystemState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store/system/types'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> updateSession <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store/system/actions'</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ChatState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store/chat/types'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> sendMessage <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store/chat/actions'</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">AppProps</span> <span class="token punctuation">{</span>
+  sendMessage<span class="token punctuation">:</span> <span class="token keyword">typeof</span> sendMessage
+  updateSession<span class="token punctuation">:</span> <span class="token keyword">typeof</span> updateSession
+  chat<span class="token punctuation">:</span> ChatState
+  system<span class="token punctuation">:</span> SystemState
+<span class="token punctuation">}</span>
+</code></pre></div><p>With these additions made props that come from redux's side are now being type checked. Feel free to extend the interface as necessary to account for additional props being passed down from parent components.</p> <h2 id="usage-with-redux-thunk"><a href="#usage-with-redux-thunk" aria-hidden="true" class="header-anchor">#</a> Usage with Redux Thunk</h2> <p>Redux Thunk is a commonly used middleware for asynchronous orchestration. Feel free to check out its documentation <a href="https://github.com/reduxjs/redux-thunk" target="_blank" rel="noopener noreferrer">here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. A thunk is a function that returns another function that takes parameters <code>dispatch</code> and <code>getState</code>. Redux Thunk has a built in type <code>ThunkAction</code> which we can utilize like so:</p> <div class="language-ts extra-class"><pre class="language-ts"><code><span class="token comment">// src/thunks.ts</span>
+
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Action <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'redux'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> sendMessage <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store/chat/actions'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> AppState <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./store'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ThunkAction <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'redux-thunk'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> thunkSendMessage <span class="token operator">=</span> <span class="token punctuation">(</span>
+  message<span class="token punctuation">:</span> <span class="token builtin">string</span>
+<span class="token punctuation">)</span><span class="token punctuation">:</span> ThunkAction<span class="token operator">&lt;</span><span class="token keyword">void</span><span class="token punctuation">,</span> AppState<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> Action<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;&gt;</span> <span class="token operator">=&gt;</span> <span class="token keyword">async</span> <span class="token parameter">dispatch</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> asyncResp <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">exampleAPI</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token function">dispatch</span><span class="token punctuation">(</span>
+    <span class="token function">sendMessage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      message<span class="token punctuation">,</span>
+      user<span class="token punctuation">:</span> asyncResp<span class="token punctuation">,</span>
+      timestamp<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">exampleAPI</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'Async Chat Bot'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>It is highly recommended to use action creators in your dispatch since we can reuse the work that has been to type check these functions.</p> <h2 id="notes-considerations"><a href="#notes-considerations" aria-hidden="true" class="header-anchor">#</a> Notes &amp; Considerations</h2> <ul><li>This documentation covers primarily the redux side of type checking. For demonstration purposes, the codesandbox example also uses react with React Redux to demonstrate an integration.</li> <li>There are multiple approaches to type checking redux, this is just one of many approaches.</li> <li>This example only serves the purpose of showing this approach, meaning other advanced concepts have been stripped out to keep things simple. If you are code splitting your redux take a look at <a href="https://medium.com/@matthewgerstman/redux-with-code-splitting-and-type-checking-205195aded46" target="_blank" rel="noopener noreferrer">this post<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</li> <li>Understand that TypeScript does have its trade-offs. It is a good idea to understand when these trade-offs are worth it in your application.</li></ul></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/Redux-VuePress/assets/js/app.8c65f330.js" defer></script><script src="/Redux-VuePress/assets/js/58.2a1ef24f.js" defer></script>
+  </body>
+</html>
